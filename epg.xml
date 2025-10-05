@@ -8,10 +8,23 @@
     <url>https://www.adsports.ae</url>
   </channel>
 
-  <!-- البرنامج -->
+  <!-- SHASHA Sports -->
+  <channel id="ShashaSports.kw@MENA">
+    <display-name>SHASHA Sports</display-name>
+    <icon src="https://i.postimg.cc/Nj4JQMTX/Picsart-25-10-04-11-52-31-346.png" />
+    <url>https://www.shasha.kw</url>
+  </channel>
+
+  <!-- البرنامج اليومي لقناة أبوظبي الرياضية -->
   <programme start="20251005000000 +0000" stop="20251006000000 +0000" channel="AbudhabiSports.ae@MENA">
     <title lang="ar">قناة الدوري الإيطالي</title>
-    <desc lang="ar">نقل مباشر وتحليلات لمباريات الدوري الإيطالي على قناة أبوظبي الرياضية.</desc>
+    <desc lang="ar">يتابع عشاق كرة القدم عبر قناة أبوظبي الرياضية أقوى مباريات الدوري الإيطالي "سيري آ"، بمشاركة أعرق الأندية مثل ميلان، إنتر، يوفنتوس، وروما. تغطية شاملة تتضمن التحليل الفني، أبرز اللقطات، وآراء خبراء كرة القدم.</desc>
+  </programme>
+
+  <!-- البرنامج اليومي لقناة شاشا -->
+  <programme start="20251005000000 +0000" stop="20251006000000 +0000" channel="ShashaSports.kw@MENA">
+    <title lang="ar">مباريات الدوري الإيطالي</title>
+    <desc lang="ar">مباريات الدوري الإيطالي تُنقل حصريًا على قنوات شاشا الكويتية، مع تغطية مميزة لأحداث البطولة وتحليل لأداء الأندية والنجوم.</desc>
   </programme>
 
 </tv>
