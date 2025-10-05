@@ -9,7 +9,7 @@ stop = start + timedelta(days=1)
 start_str = start.strftime("%Y%m%d%H%M%S +0000")
 stop_str = stop.strftime("%Y%m%d%H%M%S +0000")
 
-# نص الـ EPG
+# محتوى ملف EPG
 epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
 <tv generator-info-name="ChatGPT EPG Generator">
 
@@ -20,16 +20,16 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
     <url>https://www.adsports.ae</url>
   </channel>
 
-  <!-- البرنامج -->
+  <!-- البرنامج اليومي -->
   <programme start="{start_str}" stop="{stop_str}" channel="AbudhabiSports.ae@MENA">
     <title lang="ar">قناة الدوري الإيطالي</title>
-    <desc lang="ar">نقل مباشر وتحليلات لمباريات الدوري الإيطالي على قناة أبوظبي الرياضية.</desc>
+    <desc lang="ar">يتابع عشاق كرة القدم عبر قناة أبوظبي الرياضية أقوى مباريات الدوري الإيطالي "سيري آ"، بمشاركة أعرق الأندية مثل ميلان، إنتر، يوفنتوس، وروما. تغطية شاملة تتضمن التحليل الفني، أبرز اللقطات، وآراء خبراء كرة القدم.</desc>
   </programme>
 
 </tv>
 '''
 
-# نحفظ الملف
+# حفظ الملف
 with open("epg.xml", "w", encoding="utf-8") as f:
     f.write(epg_content)
 
