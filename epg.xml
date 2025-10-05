@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tv generator-info-name="ChatGPT EPG Generator">
 
-  <!-- Abu Dhabi Sports -->
+  <!-- قناة أبو ظبي الرياضية -->
   <channel id="AbudhabiSports.ae@MENA">
     <display-name>Abu Dhabi Sports</display-name>
     <icon src="https://i.postimg.cc/Nj4JQMTX/Picsart-25-10-04-11-52-31-346.png" />
     <url>https://www.adsports.ae</url>
   </channel>
 
-  <!-- SHASHA Sports -->
+  <!-- قناة شاشا الرياضية -->
   <channel id="ShashaSports.kw@MENA">
     <display-name>SHASHA Sports</display-name>
-    <icon src="https://i.postimg.cc/Nj4JQMTX/Picsart-25-10-04-11-52-31-346.png" />
+    <icon src="https://i.postimg.cc/Y0VGd3cw/Picsart-25-10-05-20-04-57-624.png" />
     <url>https://www.shasha.kw</url>
   </channel>
 
-  <!-- البرنامج اليومي لقناة أبوظبي الرياضية -->
+  <!-- البرنامج اليومي لقناة أبو ظبي الرياضية -->
   <programme start="20251005000000 +0000" stop="20251006000000 +0000" channel="AbudhabiSports.ae@MENA">
     <title lang="ar">قناة الدوري الإيطالي</title>
     <desc lang="ar">يتابع عشاق كرة القدم عبر قناة أبوظبي الرياضية أقوى مباريات الدوري الإيطالي "سيري آ"، بمشاركة أعرق الأندية مثل ميلان، إنتر، يوفنتوس، وروما. تغطية شاملة تتضمن التحليل الفني، أبرز اللقطات، وآراء خبراء كرة القدم.</desc>
