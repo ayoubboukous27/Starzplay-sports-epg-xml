@@ -1,1 +1,42 @@
 
+name: Update EPG Daily
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # كل يوم منتصف الليل UTC
+  workflow_dispatch:      # لتشغيله يدويًا من GitHub Actions
+
+permissions:
+  contents: write  # يسمح بالـ push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run EPG generator
+        run: |
+          echo "🔁 توليد ملف EPG جديد..."
+          python epg_update.py
+          ls -lh epg.xml || echo "⚠️ ملف EPG غير موجود!"
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🚀 رفع التحديث..."
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add epg.xml || true
+          git commit -m "Auto-update Abu Dhabi Sports EPG $(date '+%Y-%m-%d %H:%M:%S')" || echo "⚠️ لا تغييرات"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:${{ github.ref_name }}
