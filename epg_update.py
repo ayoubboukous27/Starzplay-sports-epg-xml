@@ -54,6 +54,12 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
     <icon src="https://iili.io/Kh0Gtqb.png" />
     <url>https://www.syn.is</url>
   </channel>
+  
+  <channel id="GulliArabic.me@MENA">
+    <display-name>Gulli Arabic</display-name>
+    <icon src="https://iili.io/Kh139SI.png" />
+    <url>https://www.gulliarabic.com</url>
+  </channel>
 
   <programme start="{start_str}" stop="{stop_str}" channel="AbudhabiSports.ae@MENA">
     <title lang="ar">قناة الدوري الإيطالي</title>
@@ -90,6 +96,11 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
     <desc lang="en">Live broadcasts of major sporting events from Iceland, with a focus on football and handball, including highlights and expert commentary.</desc>
   </programme>
 
+  <programme start="{start_str}" stop="{stop_str}" channel="GulliArabic.me@MENA">
+    <title lang="ar">أفلام كرتون ومغامرات</title>
+    <desc lang="ar">سلسلة من أفلام الكرتون والبرامج الترفيهية والمغامرات الممتعة، المخصصة للأطفال والمراهقين، لتقديم محتوى تعليمي ومسلٍّ في آن واحد.</desc>
+  </programme>
+
 </tv>
 '''
 
@@ -97,4 +108,4 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
 with open("epg.xml", "w", encoding="utf-8") as f:
     f.write(epg_content)
 
-print("✅ تم تحديث epg.xml بنجاح! تم تغيير شعار Syn Sports وتعديل البرنامج إلى الإنجليزية.")
+print("✅ تم تحديث epg.xml بنجاح! تم إضافة قناة Gulli Arabic.")
