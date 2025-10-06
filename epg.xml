@@ -42,6 +42,12 @@
     <icon src="https://iili.io/Kh0Gtqb.png" />
     <url>https://www.syn.is</url>
   </channel>
+  
+  <channel id="GulliArabic.me@MENA">
+    <display-name>Gulli Arabic</display-name>
+    <icon src="https://iili.io/Kh139SI.png" />
+    <url>https://www.gulliarabic.com</url>
+  </channel>
 
   <programme start="20251006000000 +0000" stop="20251007000000 +0000" channel="AbudhabiSports.ae@MENA">
     <title lang="ar">قناة الدوري الإيطالي</title>
@@ -76,6 +82,11 @@
   <programme start="20251006000000 +0000" stop="20251007000000 +0000" channel="SynSports.is@EU">
     <title lang="en">Icelandic Sports Highlights</title>
     <desc lang="en">Live broadcasts of major sporting events from Iceland, with a focus on football and handball, including highlights and expert commentary.</desc>
+  </programme>
+
+  <programme start="20251006000000 +0000" stop="20251007000000 +0000" channel="GulliArabic.me@MENA">
+    <title lang="ar">أفلام كرتون ومغامرات</title>
+    <desc lang="ar">سلسلة من أفلام الكرتون والبرامج الترفيهية والمغامرات الممتعة، المخصصة للأطفال والمراهقين، لتقديم محتوى تعليمي ومسلٍّ في آن واحد.</desc>
   </programme>
 
 </tv>
