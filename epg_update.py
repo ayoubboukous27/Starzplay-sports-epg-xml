@@ -43,6 +43,18 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
     <url>https://www.asharqdiscovery.com</url>
   </channel>
 
+  <channel id="SSC.sa@MENA">
+    <display-name>SSC</display-name>
+    <icon src="https://iili.io/Kh0GpdQ.png" />
+    <url>https://www.ssc.com.sa</url>
+  </channel>
+
+  <channel id="SynSports.is@EU">
+    <display-name>Syn Sports</display-name>
+    <icon src="https://iili.io/Kh0Gtqb.png" />
+    <url>https://www.syn.is</url>
+  </channel>
+
   <programme start="{start_str}" stop="{stop_str}" channel="AbudhabiSports.ae@MENA">
     <title lang="ar">قناة الدوري الإيطالي</title>
     <desc lang="ar">يتابع عشاق كرة القدم عبر قناة أبوظبي الرياضية أقوى مباريات الدوري الإيطالي "سيري آ"، بمشاركة أعرق الأندية مثل ميلان، إنتر، يوفنتوس، وروما. تغطية شاملة تتضمن التحليل الفني، أبرز اللقطات، وآراء خبراء كرة القدم.</desc>
@@ -54,8 +66,8 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
   </programme>
 
   <programme start="{start_str}" stop="{stop_str}" channel="Thmanya.sa@MENA">
-    <title lang="ar">نقل مباريات الدوري السعودي حصريا</title>
-    <desc lang="ar">متابعة حصرية وشاملة لأهم مباريات الدوري السعودي للمحترفين، مع تغطية مميزة وتحليل فني عميق لأداء الفرق والنجوم.</desc>
+    <title lang="ar">برامج وثائقية وحوارية</title>
+    <desc lang="ar">باقة من البرامج الوثائقية والحوارية التي تتناول قصصاً منوعة من المجتمع العربي السعودي، إضافة إلى تحليلات معمقة لمواضيع مختلفة.</desc>
   </programme>
 
   <programme start="{start_str}" stop="{stop_str}" channel="AsharqDocumentary.sa@MENA">
@@ -68,6 +80,16 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
     <desc lang="ar">اكتشف أسرار العالم من خلال مجموعة من البرامج الوثائقية المثيرة التي تغطي مواضيع عن الطبيعة، الفضاء، والتكنولوجيا، مترجمة إلى العربية.</desc>
   </programme>
 
+  <programme start="{start_str}" stop="{stop_str}" channel="SSC.sa@MENA">
+    <title lang="ar">أخبار الرياضة السعودية</title>
+    <desc lang="ar">نشرة يومية لأحدث أخبار الرياضة السعودية والعربية، بما في ذلك تغطية شاملة لمباريات الدوري السعودي، كأس خادم الحرمين الشريفين، وكأس السوبر.</desc>
+  </programme>
+
+  <programme start="{start_str}" stop="{stop_str}" channel="SynSports.is@EU">
+    <title lang="en">Icelandic Sports Highlights</title>
+    <desc lang="en">Live broadcasts of major sporting events from Iceland, with a focus on football and handball, including highlights and expert commentary.</desc>
+  </programme>
+
 </tv>
 '''
 
@@ -75,4 +97,4 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
 with open("epg.xml", "w", encoding="utf-8") as f:
     f.write(epg_content)
 
-print("✅ تم تحديث epg.xml بنجاح! تم تصحيح الشعارات وإضافة البرامج المطلوبة.")
+print("✅ تم تحديث epg.xml بنجاح! تم تغيير شعار Syn Sports وتعديل البرنامج إلى الإنجليزية.")
