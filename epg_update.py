@@ -27,20 +27,20 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
 
   <channel id="Thmanya.sa@MENA">
     <display-name>Thmanya</display-name>
-    <icon src="https://iili.io/KhlV2Jp.png" />
+    <icon src="https://iili.io/KhlVFeI.png" />
     <url>https://www.thmanyah.com</url>
-  </channel>
-
-  <channel id="AsharqDiscovery.sa@MENA">
-    <display-name>Asharq Discovery</display-name>
-    <icon src="https://iili.io/KhlV35N.png" />
-    <url>https://www.asharqdiscovery.com</url>
   </channel>
 
   <channel id="AsharqDocumentary.sa@MENA">
     <display-name>Asharq Documentary</display-name>
-    <icon src="https://iili.io/KhlVFeI.png" />
+    <icon src="https://iili.io/KhlV35N.png" />
     <url>https://www.asharqdocumentary.com</url>
+  </channel>
+
+  <channel id="AsharqDiscovery.sa@MENA">
+    <display-name>Asharq Discovery</display-name>
+    <icon src="https://iili.io/KhlV2Jp.png" />
+    <url>https://www.asharqdiscovery.com</url>
   </channel>
 
   <programme start="{start_str}" stop="{stop_str}" channel="AbudhabiSports.ae@MENA">
@@ -58,14 +58,14 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
     <desc lang="ar">متابعة حصرية وشاملة لأهم مباريات الدوري السعودي للمحترفين، مع تغطية مميزة وتحليل فني عميق لأداء الفرق والنجوم.</desc>
   </programme>
 
+  <programme start="{start_str}" stop="{stop_str}" channel="AsharqDocumentary.sa@MENA">
+    <title lang="ar">وثائقيات تاريخية وثقافية</title>
+    <desc lang="ar">رحلة عبر التاريخ والحضارة العربية، مع برامج وأفلام وثائقية معمقة عن أهم الأحداث والشخصيات التاريخية التي شكلت المنطقة.</desc>
+  </programme>
+
   <programme start="{start_str}" stop="{stop_str}" channel="AsharqDiscovery.sa@MENA">
     <title lang="ar">برامج عن الطبيعة والعلوم</title>
     <desc lang="ar">اكتشف أسرار العالم من خلال مجموعة من البرامج الوثائقية المثيرة التي تغطي مواضيع عن الطبيعة، الفضاء، والتكنولوجيا، مترجمة إلى العربية.</desc>
-  </programme>
-
-  <programme start="{start_str}" stop="{stop_str}" channel="AsharqDocumentary.sa@MENA">
-    <title lang="ar">وثائقيات تاريخية وثقافية</title>
-    <desc lang="ar">رحلة عبر التاريخ والثقافة العربية والعالمية من خلال أفلام وثائقية معمقة تسلط الضوء على الأحداث التاريخية، الحضارات، والشخصيات المؤثرة.</desc>
   </programme>
 
 </tv>
