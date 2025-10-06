@@ -54,18 +54,18 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
   </programme>
 
   <programme start="{start_str}" stop="{stop_str}" channel="Thmanya.sa@MENA">
-    <title lang="ar">برامج وثائقية وحوارية</title>
-    <desc lang="ar">باقة من البرامج الوثائقية والحوارية التي تتناول قصصاً منوعة من المجتمع العربي السعودي، إضافة إلى تحليلات معمقة لمواضيع مختلفة.</desc>
+    <title lang="ar">نقل مباريات الدوري السعودي حصريا</title>
+    <desc lang="ar">متابعة حصرية وشاملة لأهم مباريات الدوري السعودي للمحترفين، مع تغطية مميزة وتحليل فني عميق لأداء الفرق والنجوم.</desc>
   </programme>
 
   <programme start="{start_str}" stop="{stop_str}" channel="AsharqDiscovery.sa@MENA">
-    <title lang="ar">وثائقيات عالمية</title>
-    <desc lang="ar">تعرض القناة باقة من البرامج الوثائقية العالمية التي تغطي مواضيع مثل الطبيعة، العلوم، والتكنولوجيا، مترجمة للغة العربية.</desc>
+    <title lang="ar">برامج عن الطبيعة والعلوم</title>
+    <desc lang="ar">اكتشف أسرار العالم من خلال مجموعة من البرامج الوثائقية المثيرة التي تغطي مواضيع عن الطبيعة، الفضاء، والتكنولوجيا، مترجمة إلى العربية.</desc>
   </programme>
 
   <programme start="{start_str}" stop="{stop_str}" channel="AsharqDocumentary.sa@MENA">
-    <title lang="ar">أفلام وثائقية عربية</title>
-    <desc lang="ar">تُخصص القناة لعرض الأفلام والبرامج الوثائقية التي تركز على التاريخ والثقافة العربية، مع مقابلات حصرية وتحليلات مفصلة.</desc>
+    <title lang="ar">وثائقيات تاريخية وثقافية</title>
+    <desc lang="ar">رحلة عبر التاريخ والثقافة العربية والعالمية من خلال أفلام وثائقية معمقة تسلط الضوء على الأحداث التاريخية، الحضارات، والشخصيات المؤثرة.</desc>
   </programme>
 
 </tv>
@@ -75,4 +75,4 @@ epg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
 with open("epg.xml", "w", encoding="utf-8") as f:
     f.write(epg_content)
 
-print("✅ تم تحديث epg.xml بنجاح! تم إضافة القنوات الجديدة مع شعاراتها")
+print("✅ تم تحديث epg.xml بنجاح! تم تصحيح الشعارات وإضافة البرامج المطلوبة.")
