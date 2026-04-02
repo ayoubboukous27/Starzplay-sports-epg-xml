@@ -5,50 +5,66 @@ from datetime import datetime, timedelta
 # -------------------------
 # الإعدادات
 # -------------------------
-URL = "https://www.thesportsdb.com/api/v1/json/123/eventsnextleague.php?id=4332"
+API_KEY = "509ceffac75b4189b4c0e129e35941bb"
+COMPETITION = "SA"  # Serie A
 CHANNEL_ID = "seriea"
 DEFAULT_PROGRAM_TITLE = "No Match Today - Studio"
+NUM_DAYS = 7  # الأيام القادمة التي نريد إنشاء EPG لها
 
-# التاريخ الذي تريد سحب المباريات له (مثلاً الأحد القادم)
-TARGET_DATE = "2026-04-04"
+HEADERS = {"X-Auth-Token": API_KEY}
 
 # -------------------------
-# طلب البيانات
+# سحب جميع المباريات القادمة
 # -------------------------
-response = requests.get(URL)
+url = f"https://api.football-data.org/v4/competitions/{COMPETITION}/matches?status=SCHEDULED"
+response = requests.get(url, headers=HEADERS)
 data = response.json()
-events = data.get("events", [])
+matches = data.get("matches", [])
 
+# -------------------------
+# بناء XMLTV
+# -------------------------
 tv = ET.Element("tv")
 
-# فلترة المباريات حسب TARGET_DATE
-day_events = [m for m in events if m.get("dateEvent") == TARGET_DATE]
+today = datetime.utcnow()
 
-if not day_events:
-    # لا توجد مباريات → برنامج وهمي
-    start_dt = datetime.strptime(TARGET_DATE + " 18:00:00", "%Y-%m-%d %H:%M:%S")
-    stop_dt = start_dt + timedelta(hours=2)
-    prog = ET.SubElement(tv, "programme", {
-        "channel": CHANNEL_ID,
-        "start": start_dt.strftime("%Y%m%d%H%M%S +0000"),
-        "stop": stop_dt.strftime("%Y%m%d%H%M%S +0000")
-    })
-    ET.SubElement(prog, "title").text = DEFAULT_PROGRAM_TITLE
-else:
-    for match in day_events:
-        start_dt = datetime.strptime(match["dateEvent"] + " " + match["strTime"], "%Y-%m-%d %H:%M:%S")
+for day_offset in range(NUM_DAYS):
+    current_date = today + timedelta(days=day_offset)
+    date_str = current_date.strftime("%Y-%m-%d")
+
+    # فلترة المباريات لليوم الحالي
+    day_matches = [m for m in matches if m["utcDate"].startswith(date_str)]
+    
+    # ترتيب المباريات حسب الوقت
+    day_matches.sort(key=lambda m: m["utcDate"])
+
+    if not day_matches:
+        # برنامج وهمي من 18:00 إلى 20:00 UTC
+        start_dt = datetime.combine(current_date.date(), datetime.min.time()) + timedelta(hours=18)
         stop_dt = start_dt + timedelta(hours=2)
-        title = f"{match['strHomeTeam']} vs {match['strAwayTeam']}"
-
         prog = ET.SubElement(tv, "programme", {
             "channel": CHANNEL_ID,
             "start": start_dt.strftime("%Y%m%d%H%M%S +0000"),
             "stop": stop_dt.strftime("%Y%m%d%H%M%S +0000")
         })
-        ET.SubElement(prog, "title").text = title
+        ET.SubElement(prog, "title").text = DEFAULT_PROGRAM_TITLE
+    else:
+        for match in day_matches:
+            start_dt = datetime.strptime(match["utcDate"], "%Y-%m-%dT%H:%M:%SZ")
+            stop_dt = start_dt + timedelta(hours=2)
+            title = f"{match['homeTeam']['name']} vs {match['awayTeam']['name']}"
+
+            prog = ET.SubElement(tv, "programme", {
+                "channel": CHANNEL_ID,
+                "start": start_dt.strftime("%Y%m%d%H%M%S +0000"),
+                "stop": stop_dt.strftime("%Y%m%d%H%M%S +0000")
+            })
+            ET.SubElement(prog, "title").text = title
 
 # -------------------------
-# حفظ XML
+# حفظ الملف بشكل منظم
 # -------------------------
-ET.ElementTree(tv).write("epg.xml", encoding="utf-8", xml_declaration=True)
-print(f"تم إنشاء epg.xml ليوم {TARGET_DATE}")
+tree = ET.ElementTree(tv)
+tree.write("epg.xml", encoding="utf-8", xml_declaration=True)
+
+print(f"تم إنشاء epg.xml منظم لفترة {NUM_DAYS} أيام القادمة للـ Serie A")
